@@ -24,7 +24,7 @@ function calculateArea(shape, sides) {
 function getAreas(shapes, sides) {
    return new Promise((res, rej) => {
       const areas = shapes.map((shape, i) => {
-         return calculateArea();
+         return calculateArea(shape, sides[i]);
       });
 
       Promise.all(areas)
