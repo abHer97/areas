@@ -1,19 +1,23 @@
 const PI = 3.14;
 
+function roundNumber(value) {
+   return parseFloat(value.toFixed(2));
+}
+
 function calculateArea(shape, sides) {
    return new Promise((res) => {
       switch (shape.toLowerCase()) {
          case 'square':
-            res(sides[0] * sides[0]);
+            res(roundNumber(sides[0] * sides[0]));
             break;
          case 'rectangle':
-            res(sides[0] * sides[1]);
+            res(roundNumber(sides[0] * sides[1]));
             break;
          case 'circle':
-            res(PI * sides[0] * sides[0]);
+            res(roundNumber(PI * sides[0] * sides[0]));
             break;
          case 'triangle':
-            res(0.5 * sides[0] * sides[1]);
+            res(roundNumber(0.5 * sides[0] * sides[1]));
             break;
          default:
             throw -1;
