@@ -1,7 +1,7 @@
 const PI = 3.14;
 
 function calculateArea(shape, sides) {
-   return new Promise((res, rej) => {
+   return new Promise((res) => {
       switch (shape.toLowerCase()) {
          case 'square':
             res(sides[0] * sides[0]);
@@ -16,7 +16,7 @@ function calculateArea(shape, sides) {
             res(0.5 * sides[0] * sides[1]);
             break;
          default:
-            rej(-1);
+            throw -1;
       }
    });
 }
