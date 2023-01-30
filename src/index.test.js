@@ -25,4 +25,12 @@ describe('getAreas test suite', () => {
          expect(areas).toEqual([4, 16, 30, 200.96, 10.5]);
       });
    });
+
+   it('should throw an error if a shape is not valid', () => {
+      getAreas(['square', 'rectangle', 'trapezium', 'circle'], [[2], [3, 4], [2, 2, 2], [8]]).catch(
+         (err) => {
+            expect(err).toBe(-1);
+         }
+      );
+   });
 });
