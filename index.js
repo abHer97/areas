@@ -20,3 +20,19 @@ export function calculateArea(shape, sides) {
       }
    });
 }
+
+export function getAreas(shapes, sides) {
+   return new Promise((res, rej) => {
+      const areas = shapes.map((shape, i) => {
+         return calculateArea();
+      });
+
+      Promise.all(areas)
+         .then((areas) => {
+            res(areas);
+         })
+         .catch((err) => {
+            rej(err);
+         });
+   });
+}
